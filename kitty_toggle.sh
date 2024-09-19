@@ -1,9 +1,13 @@
 #!/bin/bash
 
+# Create variable for the Kitty window
+KITTYWINDOW = $(xdotool search --class kitty)
+echo "@" "$KITTYWINDOW"
+
 # Check if Kitty's window is visible using xdotool
 if xdotool search --class kitty > /dev/null; then
 	# Try to minimize if active, or raise if minimized
-	if xprop -id 33554446 | grep 'window state: Normal'; then
+	if xprop -id 6291470 | grep 'window state: Normal'; then
 		xdotool search --class kitty windowminimize 
 	else
 		xdotool search --class kitty windowactivate
