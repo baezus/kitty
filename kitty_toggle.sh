@@ -1,12 +1,13 @@
 #!/bin/bash
 
+# First, see if Kitty is open at all
 echo "Checking if Kitty is running ... "
 
 # Check if Kitty's window is visible using xdotool
 if xdotool search --class kitty > /dev/null; then
 	echo "Kitty window found, toggling ..."
 	# Try to minimze if active, or raise if minimized
-	if xprop -id 0x200000f | grep 'window state: Normal'; then
+	if xprop -id 33554446 | grep 'window state: Normal'; then
 	# if xdotool search --class kitty getwindowfocus getwindowpid > /dev/null; then
 		echo "Minimizing Kitty window"
 		xdotool search --class kitty windowminimize 
