@@ -9,7 +9,7 @@ if xdotool search --class kitty > /dev/null; then
 		xdotool search --class kitty windowactivate
 	fi
 else
-	# If no window is found, check if the process is running
+	# If no window is found, check if the process is running. If not, run process
 	if ! pgrep -x kitty > /dev/null; then
 		kitty & 
 	fi
